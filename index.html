@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Red Geodésica INRA - 1164 puntos geodésicos del Instituto Nacional de Reforma Agraria de Bolivia">
+    <title>Red Geodésica INRA - Bolivia</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="layout">
+    <!-- SIDEBAR IZQUIERDA -->
+    <aside id="sidebar-left">
+        <div class="slider-handle-left" id="toggle-left" title="Expandir/Contraer">«</div>
+
+        <div class="header">
+            <h1>🗺 Red Geodésica INRA</h1>
+            <p>Instituto Nacional de Reforma Agraria - Bolivia</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="stat-total">1164</div>
+                <div class="stat-label">Puntos</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-visible">1164</div>
+                <div class="stat-label">Visibles</div>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="🔍 Buscar punto...">
+        </div>
+
+        <div id="list-container"></div>
+
+        <div class="footer">
+            <strong>Elaborado por:</strong><br>
+            John Leonardo Cabrera Espíndola<br>
+            📧 leoleder1@gmail.com
+        </div>
+    </aside>
+
+    <!-- MAPA -->
+    <div id="map">
+        <!-- Modal emergente de leyenda -->
+        <div id="legend-modal" class="legend-modal">
+            <div class="legend-header">Leyenda de Proyectos</div>
+            <div class="legend-content" id="legend-content"></div>
+        </div>
+
+        <!-- Controles en parte inferior -->
+        <div id="map-controls">
+            <button id="save-state-btn" title="Guardar/Restaurar sidebars">💾</button>
+            <button id="fullscreen-btn" title="Pantalla completa">⛶</button>
+            <button id="legend-toggle-btn" title="Mostrar leyenda">🎨</button>
+        </div>
+    </div>
+
+    <!-- SIDEBAR DERECHA -->
+    <aside id="sidebar-right">
+        <div class="slider-handle-right" id="toggle-right" title="Expandir/Contraer">»</div>
+
+        <!-- FILTROS -->
+        <div class="sidebar-section">
+            <h3>Filtros por Proyecto</h3>
+            <div class="filter-group" id="filter-group"></div>
+        </div>
+
+        <!-- INFORMACIÓN -->
+        <div id="info-section" class="sidebar-section empty">
+            <div>Selecciona un punto en el mapa</div>
+        </div>
+    </aside>
+</div>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
